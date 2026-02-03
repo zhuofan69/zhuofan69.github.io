@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Valentine 💖</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:'Segoe UI',sans-serif;
+  height:100vh;
+  overflow:hidden;
+  background:linear-gradient(-45deg,#ff6a88,#ff99ac,#ffc3a0,#ffafbd);
+  background-size:400% 400%;
+  animation:bg 12s ease infinite;
+}
+@keyframes bg{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+.slide{
+  position:absolute;
+  width:100%;
+  height:100vh;
+  display:none;
+  justify-content:center;
+  align-items:center;
+}
+.active{display:flex;}
+.card{
+  width:95%;
+  max-width:850px;
+  height:92vh;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(18px);
+  border-radius:25px;
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  box-shadow:0 10px 40px rgba(0,0,0,0.3);
+}
+.content{
+  overflow:auto;
+  width:100%;
+}
+h1{
+  color:white;
+  margin-bottom:6px;
+  font-size:clamp(20px,3vw,26px);
+}
+.love-message{
+  width:95%;
+  background:black;
+  color:#ff9ac4;
+  border:3px solid #ff4e8d;
+  border-radius:15px;
+  padding:14px;
+  margin:12px 0;
+  font-size:16px;
+  font-weight:bold;
+  font-style:italic;
+  box-shadow:0 0 20px #ff4e8d;
+  line-height:1.5;
+}
+img, video{
+  width:100%;
+  max-width:650px;
+  max-height:240px;
+  object-fit:contain;
+  background:black;
+  border-radius:16px;
+  margin:8px 0;
+  box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+.photo-row{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.photo-row img{
+  width:48%;
+  max-height:220px;
+}
+.buttons{margin-top:8px;}
+button{
+  margin:6px;
+  padding:10px 20px;
+  border:none;
+  border-radius:20px;
+  background:white;
+  color:#ff4e8d;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+button:hover{transform:scale(1.1);}
+.dots{
+  position:fixed;
+  bottom:10px;
+  width:100%;
+  text-align:center;
+}
+.dot{
+  height:8px;width:8px;background:white;
+  border-radius:50%;display:inline-block;margin:3px;opacity:0.4;
+}
+.dot.active{opacity:1;}
+.heart{
+  position:fixed;
+  animation:float 6s linear infinite;
+}
+@keyframes float{
+  from{transform:translateY(100vh);}
+  to{transform:translateY(-10vh);}
+}
+@media(max-width:600px){
+  .photo-row img{width:100%;}
+  img,video{max-height:200px;}
+}
+</style>
+</head>
+
+<body>
+<audio id="bg-music" autoplay loop>
+  <source src="music2.mp3" type="audio/mpeg">
+  <source src="music2.mp4" type="audio/mp4">
+</audio>
+
+<!-- Hidden video fallback -->
+<video id="bg-video-music" autoplay loop style="display:none">
+  <source src="music2.mp4" type="video/mp4">
+</video>
+
+<!-- Slide 1 -->
+<div class="slide active">
+  <div class="card">
+    <div class="content">
+      <h1>MY BBY 🥰</h1>
+      <img src="pic1.png">
+      <div class="love-message">
+        Hehehehe bby I made this for you bby cause its Valentines Day and I dont know what to do for you cause you are so far away from me and we cant celebrate it together and I wanted to do something for you in my own way for someone I love the most in this world my sweet bby ( you ) hehe maybe I dont know how to express my love my feeling to you sometimes but my love and feelings are true and I love you so muchhhhh you are the person I love the most in this world and you are the most important person in this world for me bby I love you so so muchhhhh mero bby 💋💋💋💋💋💋💋💋
+      </div>
+      <img src="pic1.png.png">
+    </div>
+    <div class="buttons">
+      <button onclick="nextSlide()">Next ➡</button>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide">
+  <div class="card">
+    <div class="content">
+      <h1>Our Memories 📸✨</h1>
+      <div class="love-message">
+        Bby all the times we have spent together all the good times the bad times random talks you being angry with me and again being normal randomly all those moments are very special to me and I will never forget this in my whole life when I remember these moments a smile automatically comes on my face hehe I cant hide my happiness and the love I have for you bby I love you so muchhhhh and you are very special for me bby 😘😘😘😘😘😘😘😘
+      </div>
+      <div class="photo-row">
+        <img src="7.png">
+        <img src="3.png.png">
+      </div>
+    </div>
+    <div class="buttons">
+      <button onclick="prevSlide()">⬅</button>
+      <button onclick="nextSlide()">➡</button>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide">
+  <div class="card">
+    <div class="content">
+      <h1>For You 🤍💋😘</h1>
+      <div class="love-message">
+        Bby you are not just someone I just talk but someone I care very deeply and your eyes your smile your hair your hand everything about you make you so muchhh beautiful and so different from others and makes me fall in love with you more and more each day bby you live in my heart for forever and ever for eternity and this heart will never be others hehe I love you so muchhhh bby 😘😘😘😘😘😘😘😘😘😘😘😘😘
+      </div>
+      <video controls src="1video.mp4"></video>
+    </div>
+    <div class="buttons">
+      <button onclick="prevSlide()">⬅</button>
+      <button onclick="nextSlide()">➡</button>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 4 -->
+<div class="slide">
+  <div class="card">
+    <div class="content">
+      <h1>MY Biggest supporter my Bby🤍💋</h1>
+      <div class="love-message">
+        Thank you so muchhhh bby for being my biggest supporter for being kind understanding and always being there for me and for making me feel good whenever I am feeling sad even my bad days become good after talking with you for a while I feel so muchhhh lucky to be your boyfriend and for you being my girlfriend I am so lucky to find you and I thank God for making me meet you hehe I never want to lose you bby I love you so so so muchhhhh please never leave me hussss and thank you for being my biggest supporter 😘😘💋💋🤍🤍🤍
+      </div>
+      <img src="4.png.png">
+    </div>
+    <div class="buttons">
+      <button onclick="prevSlide()">⬅</button>
+      <button onclick="nextSlide()">➡</button>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 5 -->
+<div class="slide">
+  <div class="card">
+    <div class="content">
+      <h1>Be My Valentine 🤍🤍💋💋</h1>
+      <div class="love-message">
+        Mero pyaro bby I dont need reason to like you or love you I only need my heart and that love I feel for you bby I wish to keep our bond our relationship relation always like this funny romantic sweet sometimes bitter and all for forever and make even more new memories together and experience more new things together and love each other more each passing day and be together forever it makes me so happy to imagine us together you are very special to me bby and I love you so so so so so so so so so so so muchhhhhhhhhhh 😘😘💋💋🤍🤍🤍 and will you be my valentine bby ???😘💋🤍💍
+      </div>
+    </div>
+    <div class="buttons">
+      <button onclick="prevSlide()">⬅</button>
+    </div>
+  </div>
+</div>
+
+<div class="dots" id="dots"></div>
+
+<script>
+let currentSlide=0;
+const slides=document.querySelectorAll(".slide");
+const dotsBox=document.getElementById("dots");
+
+slides.forEach((_,i)=>{
+  let d=document.createElement("span");
+  d.classList.add("dot");
+  if(i==0)d.classList.add("active");
+  dotsBox.appendChild(d);
+});
+
+function showSlide(n){
+  slides.forEach(s=>s.classList.remove("active"));
+  slides[n].classList.add("active");
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("active"));
+  document.querySelectorAll(".dot")[n].classList.add("active");
+}
+function nextSlide(){if(currentSlide<slides.length-1){currentSlide++;showSlide(currentSlide);}}
+function prevSlide(){if(currentSlide>0){currentSlide--;showSlide(currentSlide);}}
+
+function heart(){
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💖";
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(Math.random()*20+10)+"px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+}
+setInterval(heart,300);
+
+document.addEventListener("click",()=>{
+  document.getElementById("bg-music").play();
+});
+</script>
+
+</body>
+</html>
